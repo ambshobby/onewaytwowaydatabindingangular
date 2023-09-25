@@ -1,0 +1,27 @@
+<!-- One way databinding example -->
+<div >
+    <app-onewaydata-binding></app-onewaydata-binding>
+</div>
+--------------------------------------------------------
+<!-- two way with property databinding example -->
+<div >
+    
+    <app-parentchild (v1_name_prop)="newvar_v1"></app-parentchild>
+</div>
+---------------------------------------------------------
+<div>
+<app-newpc (new_prop)="new_pc_var"></app-newpc>
+</div>
+------------------------------------------------------------
+<div name="dropdiv">
+    <div>
+        <select>
+          <option>
+           Peek in 
+          </option>
+          <option *ngFor="let data of dropdata">{{data}}</option>
+      
+        </select>
+    <app-dropdownautoupdate (dataFromChild)="parentdatahandler($event)"></app-dropdownautoupdate>
+
+</div>
